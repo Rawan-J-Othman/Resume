@@ -1,25 +1,28 @@
 // ========================================
-// Chart.js Configurations
+// Chart.js Configurations - Beautiful & Colorful
 // ========================================
 
-// Color palette matching the dark navy + lime green theme
+// Vibrant color palette for beautiful charts
 const chartColors = {
-    primary: 'hsl(100, 70%, 55%)',
-    primaryLight: 'hsl(100, 70%, 65%)',
-    primaryDark: 'hsl(100, 70%, 45%)',
-    accent: 'hsl(100, 70%, 55%)',
-    accentLight: 'hsl(100, 70%, 65%)',
-    background: 'rgba(163, 230, 53, 0.1)',
-    border: 'rgba(163, 230, 53, 0.3)'
+    coral: '#FF6B6B',
+    teal: '#4ECDC4',
+    purple: '#9B59B6',
+    orange: '#F39C12',
+    pink: '#E91E63',
+    blue: '#3498DB',
+    green: '#2ECC71',
+    yellow: '#F1C40F',
+    indigo: '#6C5CE7',
+    mint: '#00D2B8'
 };
 
 // Global Chart.js defaults
 Chart.defaults.color = '#ffffff';
-Chart.defaults.borderColor = 'rgba(163, 230, 53, 0.1)';
+Chart.defaults.borderColor = 'rgba(255, 255, 255, 0.1)';
 Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif";
 
 // ========================================
-// Chart 1: Nutrition Counseling Focus
+// Chart 1: Nutrition Counseling Focus - Doughnut Chart
 // ========================================
 const nutritionCtx = document.getElementById('nutritionChart');
 if (nutritionCtx) {
@@ -30,53 +33,52 @@ if (nutritionCtx) {
             datasets: [{
                 data: [30, 20, 20, 15, 15],
                 backgroundColor: [
-                    chartColors.primary,
-                    chartColors.primaryLight,
-                    chartColors.accent,
-                    chartColors.accentLight,
-                    chartColors.primaryDark
+                    chartColors.coral,
+                    chartColors.teal,
+                    chartColors.purple,
+                    chartColors.orange,
+                    chartColors.pink
                 ],
-                borderColor: '#2C3E50',
-                borderWidth: 2,
-                hoverOffset: 10
+                borderColor: '#1a1a2e',
+                borderWidth: 3,
+                hoverOffset: 15,
+                hoverBorderWidth: 4
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: {
-                    top: 10,
-                    bottom: 10,
-                    left: 10,
-                    right: 10
-                }
+                padding: 20
             },
             plugins: {
                 legend: {
                     position: 'bottom',
-                    align: 'center',
                     labels: {
-                        padding: 10,
+                        padding: 15,
                         font: {
-                            size: 11
+                            size: 12,
+                            weight: '500'
                         },
                         color: '#ffffff',
-                        boxWidth: 12,
-                        boxHeight: 12,
-                        usePointStyle: true
+                        boxWidth: 15,
+                        boxHeight: 15,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(44, 62, 80, 0.95)',
-                    padding: 12,
+                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+                    padding: 15,
                     titleFont: {
-                        size: 13,
+                        size: 14,
                         weight: 'bold'
                     },
                     bodyFont: {
-                        size: 12
+                        size: 13
                     },
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    borderWidth: 1,
                     callbacks: {
                         label: function(context) {
                             return context.label + ': ' + context.parsed + '%';
@@ -87,15 +89,15 @@ if (nutritionCtx) {
             animation: {
                 animateRotate: true,
                 animateScale: true,
-                duration: 1500,
-                easing: 'easeInOutQuart'
+                duration: 2000,
+                easing: 'easeInOutCubic'
             }
         }
     });
 }
 
 // ========================================
-// Chart 2: Client Health Goals
+// Chart 2: Client Health Goals - Bar Chart with Gradient
 // ========================================
 const clientGoalsCtx = document.getElementById('clientGoalsChart');
 if (clientGoalsCtx) {
@@ -107,41 +109,52 @@ if (clientGoalsCtx) {
                 label: 'Client Distribution (%)',
                 data: [35, 25, 20, 10, 10],
                 backgroundColor: [
-                    chartColors.primary,
-                    chartColors.primaryLight,
-                    chartColors.accent,
-                    chartColors.accentLight,
-                    chartColors.primaryDark
+                    chartColors.blue,
+                    chartColors.green,
+                    chartColors.orange,
+                    chartColors.pink,
+                    chartColors.purple
                 ],
                 borderColor: [
-                    chartColors.primaryDark,
-                    chartColors.primary,
-                    chartColors.accent,
-                    chartColors.accent,
-                    chartColors.primary
+                    chartColors.blue,
+                    chartColors.green,
+                    chartColors.orange,
+                    chartColors.pink,
+                    chartColors.purple
                 ],
                 borderWidth: 2,
-                borderRadius: 6,
-                hoverBackgroundColor: chartColors.accentLight
+                borderRadius: 10,
+                hoverBackgroundColor: [
+                    chartColors.teal,
+                    chartColors.mint,
+                    chartColors.yellow,
+                    chartColors.coral,
+                    chartColors.indigo
+                ]
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: {
+                padding: 20
+            },
             plugins: {
                 legend: {
                     display: false
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(44, 62, 80, 0.95)',
-                    padding: 12,
+                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+                    padding: 15,
                     titleFont: {
-                        size: 13,
+                        size: 14,
                         weight: 'bold'
                     },
                     bodyFont: {
-                        size: 12
+                        size: 13
                     },
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    borderWidth: 1,
                     callbacks: {
                         label: function(context) {
                             return 'Clients: ' + context.parsed.y + '%';
@@ -156,111 +169,111 @@ if (clientGoalsCtx) {
                     ticks: {
                         callback: function(value) {
                             return value + '%';
+                        },
+                        color: '#ffffff',
+                        font: {
+                            size: 11
                         }
                     },
                     grid: {
-                        color: 'rgba(163, 230, 53, 0.05)'
+                        color: 'rgba(255, 255, 255, 0.1)',
+                        drawBorder: false
                     }
                 },
                 x: {
+                    ticks: {
+                        color: '#ffffff',
+                        font: {
+                            size: 11
+                        }
+                    },
                     grid: {
                         display: false
                     }
                 }
             },
             animation: {
-                duration: 1500,
-                easing: 'easeInOutQuart'
+                duration: 2000,
+                easing: 'easeInOutBounce'
             }
         }
     });
 }
 
 // ========================================
-// Chart 3: Service Distribution
+// Chart 3: Service Distribution - Pie Chart
 // ========================================
 const servicesCtx = document.getElementById('servicesChart');
 if (servicesCtx) {
     new Chart(servicesCtx, {
-        type: 'polarArea',
+        type: 'pie',
         data: {
-            labels: ['Nutrition Counseling', 'Personal Training', 'Meal Planning', 'Education/Teaching', 'Healthcare Support'],
+            labels: ['Nutrition Counseling', 'Personal Training', 'Meal Planning', 'Education', 'Healthcare Support'],
             datasets: [{
                 data: [30, 25, 20, 15, 10],
                 backgroundColor: [
-                    'rgba(107, 190, 146, 0.7)',
-                    'rgba(143, 209, 169, 0.7)',
-                    'rgba(244, 164, 96, 0.7)',
-                    'rgba(255, 183, 124, 0.7)',
-                    'rgba(74, 159, 115, 0.7)'
+                    chartColors.indigo,
+                    chartColors.mint,
+                    chartColors.yellow,
+                    chartColors.coral,
+                    chartColors.pink
                 ],
-                borderColor: [
-                    chartColors.primary,
-                    chartColors.primaryLight,
-                    chartColors.accent,
-                    chartColors.accentLight,
-                    chartColors.primaryDark
-                ],
-                borderWidth: 2
+                borderColor: '#1a1a2e',
+                borderWidth: 3,
+                hoverOffset: 15,
+                hoverBorderWidth: 4
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: {
-                    top: 10,
-                    bottom: 10,
-                    left: 10,
-                    right: 10
-                }
+                padding: 20
             },
             plugins: {
                 legend: {
                     position: 'bottom',
-                    align: 'center',
                     labels: {
-                        padding: 10,
+                        padding: 15,
                         font: {
-                            size: 10
+                            size: 11,
+                            weight: '500'
                         },
                         color: '#ffffff',
-                        boxWidth: 12,
-                        boxHeight: 12,
-                        usePointStyle: true
+                        boxWidth: 15,
+                        boxHeight: 15,
+                        usePointStyle: true,
+                        pointStyle: 'circle'
                     }
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(44, 62, 80, 0.95)',
-                    padding: 12,
+                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+                    padding: 15,
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    borderWidth: 1,
                     callbacks: {
                         label: function(context) {
-                            return context.label + ': ' + context.parsed.r + '%';
+                            return context.label + ': ' + context.parsed + '%';
                         }
                     }
                 }
             },
-            scales: {
-                r: {
-                    beginAtZero: true,
-                    ticks: {
-                        display: false
-                    },
-                    grid: {
-                        color: 'rgba(163, 230, 53, 0.1)'
-                    }
-                }
-            },
             animation: {
-                duration: 1500,
-                easing: 'easeInOutQuart'
+                animateRotate: true,
+                animateScale: true,
+                duration: 2000,
+                easing: 'easeInOutCubic'
             }
         }
     });
 }
 
 // ========================================
-// Chart 4: Skills Proficiency
+// Chart 4: Skills Proficiency - Radar Chart
 // ========================================
 const skillsCtx = document.getElementById('skillsChart');
 if (skillsCtx) {
@@ -279,35 +292,33 @@ if (skillsCtx) {
             datasets: [{
                 label: 'Proficiency Level',
                 data: [95, 90, 95, 85, 90, 88, 92],
-                backgroundColor: 'rgba(107, 190, 146, 0.2)',
-                borderColor: chartColors.primary,
-                borderWidth: 2,
-                pointBackgroundColor: chartColors.accent,
+                backgroundColor: 'rgba(78, 205, 196, 0.3)',
+                borderColor: chartColors.teal,
+                borderWidth: 3,
+                pointBackgroundColor: chartColors.coral,
                 pointBorderColor: '#fff',
                 pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: chartColors.accent,
-                pointRadius: 5,
-                pointHoverRadius: 7
+                pointHoverBorderColor: chartColors.coral,
+                pointRadius: 6,
+                pointHoverRadius: 8,
+                pointBorderWidth: 2
             }]
         },
         options: {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: {
-                    top: 25,
-                    bottom: 10,
-                    left: 25,
-                    right: 25
-                }
+                padding: 30
             },
             plugins: {
                 legend: {
                     display: false
                 },
                 tooltip: {
-                    backgroundColor: 'rgba(44, 62, 80, 0.95)',
-                    padding: 12,
+                    backgroundColor: 'rgba(26, 26, 46, 0.95)',
+                    padding: 15,
+                    borderColor: 'rgba(255, 255, 255, 0.2)',
+                    borderWidth: 1,
                     callbacks: {
                         label: function(context) {
                             return context.label + ': ' + context.parsed.r + '%';
@@ -319,6 +330,7 @@ if (skillsCtx) {
                 r: {
                     beginAtZero: true,
                     max: 100,
+                    min: 0,
                     ticks: {
                         stepSize: 20,
                         display: true,
@@ -327,27 +339,28 @@ if (skillsCtx) {
                         },
                         backdropColor: 'transparent',
                         font: {
-                            size: 10
+                            size: 11
                         },
                         color: '#ffffff'
                     },
                     grid: {
-                        color: 'rgba(163, 230, 53, 0.1)'
+                        color: 'rgba(255, 255, 255, 0.15)'
                     },
                     angleLines: {
-                        color: 'rgba(163, 230, 53, 0.1)'
+                        color: 'rgba(255, 255, 255, 0.15)'
                     },
                     pointLabels: {
                         font: {
-                            size: 10
+                            size: 11,
+                            weight: '500'
                         },
-                        padding: 12,
-                        color: '#ffffff'
+                        color: '#ffffff',
+                        padding: 10
                     }
                 }
             },
             animation: {
-                duration: 1500,
+                duration: 2000,
                 easing: 'easeInOutQuart'
             }
         }
@@ -459,8 +472,8 @@ window.addEventListener('load', () => {
 // Console Message
 // ========================================
 console.log('%c👋 Welcome to Rawan J. Othman\'s Professional Resume!',
-    'color: hsl(100, 70%, 55%); font-size: 16px; font-weight: bold;');
+    'color: #4ECDC4; font-size: 16px; font-weight: bold;');
 console.log('%cCertified Nutritionist | Personal Trainer | Wellness Coach',
-    'color: hsl(100, 70%, 55%); font-size: 12px;');
+    'color: #FF6B6B; font-size: 12px;');
 console.log('%cInterested in collaborating? Email: othmanrawan21@gmail.com',
     'color: #b3b3b3; font-size: 11px;');
