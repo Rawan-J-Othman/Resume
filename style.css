@@ -942,8 +942,8 @@ body {
     }
 
     .chart-card {
-        min-height: 240px;
-        padding: var(--spacing-sm) var(--spacing-md) var(--spacing-md) var(--spacing-md);
+        min-height: 260px;
+        padding: var(--spacing-sm) var(--spacing-md) var(--spacing-lg) var(--spacing-md);
     }
 
     .chart-card h3 {
@@ -1064,8 +1064,8 @@ body {
     }
 
     .chart-card {
-        min-height: 220px;
-        padding: 0.5rem var(--spacing-sm) var(--spacing-sm) var(--spacing-sm);
+        min-height: 240px;
+        padding: 0.5rem var(--spacing-sm) var(--spacing-md) var(--spacing-sm);
     }
 
     .chart-card h3 {
