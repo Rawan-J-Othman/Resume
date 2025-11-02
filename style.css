@@ -329,12 +329,12 @@ body {
 }
 
 .chart-card canvas {
-    height: 350px !important;
-    max-height: 350px;
+    height: 420px !important;
+    max-height: 420px;
 }
 
 .chart-card {
-    min-height: 420px;
+    min-height: 500px;
 }
 
 .chart-card-full {
@@ -344,7 +344,7 @@ body {
     border: 1px solid rgba(163, 230, 53, 0.1);
     transition: var(--transition-base);
     margin-top: var(--spacing-lg);
-    min-height: 420px;
+    min-height: 500px;
 }
 
 .chart-card-full:hover {
@@ -361,8 +361,8 @@ body {
 }
 
 .chart-card-full canvas {
-    height: 350px !important;
-    max-height: 350px;
+    height: 420px !important;
+    max-height: 420px;
 }
 
 /* ========================================

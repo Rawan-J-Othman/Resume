@@ -49,15 +49,20 @@ if (nutritionCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 30,
+                    bottom: 30,
+                    left: 25,
+                    right: 25
+                }
             },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 15,
+                        padding: 20,
                         font: {
-                            size: 12,
+                            size: 13,
                             weight: '500'
                         },
                         color: '#ffffff',
@@ -137,7 +142,12 @@ if (clientGoalsCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 30,
+                    bottom: 30,
+                    left: 25,
+                    right: 25
+                }
             },
             plugins: {
                 legend: {
@@ -184,7 +194,7 @@ if (clientGoalsCtx) {
                     ticks: {
                         color: '#ffffff',
                         font: {
-                            size: 11
+                            size: 12
                         }
                     },
                     grid: {
@@ -228,15 +238,20 @@ if (servicesCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 30,
+                    bottom: 30,
+                    left: 25,
+                    right: 25
+                }
             },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 15,
+                        padding: 20,
                         font: {
-                            size: 11,
+                            size: 12,
                             weight: '500'
                         },
                         color: '#ffffff',
@@ -327,7 +342,12 @@ if (skillsCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 30,
+                    bottom: 30,
+                    left: 25,
+                    right: 25
+                }
             },
             plugins: {
                 legend: {
@@ -374,7 +394,7 @@ if (skillsCtx) {
                     ticks: {
                         color: '#ffffff',
                         font: {
-                            size: 11
+                            size: 12
                         },
                         autoSkip: false,
                         maxRotation: 45,
