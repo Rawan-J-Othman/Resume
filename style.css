@@ -311,7 +311,8 @@ body {
 }
 
 .chart-card canvas {
-    max-height: 250px;
+    height: 300px !important;
+    max-height: 300px;
 }
 
 /* ========================================

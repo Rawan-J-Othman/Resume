@@ -43,7 +43,7 @@ if (nutritionCtx) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'bottom',
@@ -51,7 +51,9 @@ if (nutritionCtx) {
                         padding: 15,
                         font: {
                             size: 11
-                        }
+                        },
+                        boxWidth: 12,
+                        usePointStyle: true
                     }
                 },
                 tooltip: {
@@ -114,7 +116,7 @@ if (clientGoalsCtx) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     display: false
@@ -193,7 +195,7 @@ if (servicesCtx) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     position: 'bottom',
@@ -201,7 +203,9 @@ if (servicesCtx) {
                         padding: 12,
                         font: {
                             size: 10
-                        }
+                        },
+                        boxWidth: 12,
+                        usePointStyle: true
                     }
                 },
                 tooltip: {
@@ -266,7 +270,7 @@ if (skillsCtx) {
         },
         options: {
             responsive: true,
-            maintainAspectRatio: true,
+            maintainAspectRatio: false,
             plugins: {
                 legend: {
                     display: false
@@ -300,8 +304,9 @@ if (skillsCtx) {
                     },
                     pointLabels: {
                         font: {
-                            size: 11
-                        }
+                            size: 10
+                        },
+                        padding: 10
                     }
                 }
             },
