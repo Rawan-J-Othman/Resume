@@ -50,20 +50,25 @@ if (nutritionCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 25,
+                    bottom: 25,
+                    left: 20,
+                    right: 20
+                }
             },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 15,
+                        padding: 12,
                         font: {
-                            size: 12,
+                            size: 11,
                             weight: '500'
                         },
                         color: '#ffffff',
-                        boxWidth: 15,
-                        boxHeight: 15,
+                        boxWidth: 12,
+                        boxHeight: 12,
                         usePointStyle: true,
                         pointStyle: 'circle'
                     }
@@ -286,19 +291,17 @@ if (skillsCtx) {
                 'Client Counseling',
                 'Meal Planning',
                 'Fitness Training',
-                'Healthcare Knowledge',
                 'Patient Education',
                 'Cultural Competency'
             ],
             datasets: [{
                 label: 'Proficiency Level (%)',
-                data: [95, 90, 95, 85, 90, 88, 92],
+                data: [95, 90, 95, 85, 88, 92],
                 backgroundColor: [
                     chartColors.coral,
                     chartColors.teal,
                     chartColors.purple,
                     chartColors.orange,
-                    chartColors.mint,
                     chartColors.pink,
                     chartColors.indigo
                 ],
@@ -307,7 +310,6 @@ if (skillsCtx) {
                     chartColors.teal,
                     chartColors.purple,
                     chartColors.orange,
-                    chartColors.mint,
                     chartColors.pink,
                     chartColors.indigo
                 ],
@@ -318,8 +320,7 @@ if (skillsCtx) {
                     chartColors.coral,
                     chartColors.indigo,
                     chartColors.yellow,
-                    chartColors.teal,
-                    chartColors.orange,
+                    chartColors.mint,
                     chartColors.purple
                 ]
             }]
@@ -328,7 +329,12 @@ if (skillsCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 20,
+                    bottom: 50,
+                    left: 20,
+                    right: 20
+                }
             },
             plugins: {
                 legend: {
