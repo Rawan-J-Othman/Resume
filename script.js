@@ -375,7 +375,10 @@ if (skillsCtx) {
                         color: '#ffffff',
                         font: {
                             size: 11
-                        }
+                        },
+                        autoSkip: false,
+                        maxRotation: 45,
+                        minRotation: 45
                     },
                     grid: {
                         display: false

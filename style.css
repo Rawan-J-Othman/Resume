@@ -959,6 +959,12 @@ body {
         max-height: 180px;
     }
 
+    /* Fix Skills Proficiency labels on mobile */
+    .chart-card-full canvas {
+        height: 200px !important;
+        max-height: 200px;
+    }
+
     .section {
         padding: var(--spacing-lg) 0;
     }
@@ -1050,10 +1056,19 @@ body {
         margin-bottom: 0.5rem;
     }
 
-    .chart-card canvas,
-    .chart-card-full canvas {
+    .chart-card canvas {
         height: 150px !important;
         max-height: 150px;
+    }
+
+    /* Increase height for Skills chart to show all labels */
+    .chart-card-full canvas {
+        height: 180px !important;
+        max-height: 180px;
+    }
+
+    .chart-card-full {
+        min-height: 220px;
     }
 
     .cta-section h2 {
