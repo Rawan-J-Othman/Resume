@@ -44,17 +44,43 @@ if (nutritionCtx) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    top: 20,
+                    bottom: 20,
+                    left: 10,
+                    right: 10
+                }
+            },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 15,
+                        padding: 8,
                         font: {
-                            size: 11
+                            size: 10
                         },
-                        boxWidth: 12,
-                        usePointStyle: true
-                    }
+                        boxWidth: 10,
+                        usePointStyle: true,
+                        generateLabels: function(chart) {
+                            const data = chart.data;
+                            if (data.labels.length && data.datasets.length) {
+                                return data.labels.map((label, i) => {
+                                    const dataset = data.datasets[0];
+                                    return {
+                                        text: label,
+                                        fillStyle: dataset.backgroundColor[i],
+                                        strokeStyle: dataset.borderColor[i],
+                                        hidden: false,
+                                        index: i
+                                    };
+                                });
+                            }
+                            return [];
+                        }
+                    },
+                    maxWidth: 400,
+                    fullSize: false
                 },
                 tooltip: {
                     backgroundColor: 'rgba(44, 62, 80, 0.95)',
@@ -196,17 +222,26 @@ if (servicesCtx) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    top: 20,
+                    bottom: 20,
+                    left: 10,
+                    right: 10
+                }
+            },
             plugins: {
                 legend: {
                     position: 'bottom',
                     labels: {
-                        padding: 12,
+                        padding: 6,
                         font: {
-                            size: 10
+                            size: 9
                         },
-                        boxWidth: 12,
+                        boxWidth: 10,
                         usePointStyle: true
-                    }
+                    },
+                    maxWidth: 400
                 },
                 tooltip: {
                     backgroundColor: 'rgba(44, 62, 80, 0.95)',
@@ -271,6 +306,14 @@ if (skillsCtx) {
         options: {
             responsive: true,
             maintainAspectRatio: false,
+            layout: {
+                padding: {
+                    top: 30,
+                    bottom: 10,
+                    left: 30,
+                    right: 30
+                }
+            },
             plugins: {
                 legend: {
                     display: false
@@ -291,10 +334,15 @@ if (skillsCtx) {
                     max: 100,
                     ticks: {
                         stepSize: 20,
+                        display: true,
                         callback: function(value) {
                             return value + '%';
                         },
-                        backdropColor: 'transparent'
+                        backdropColor: 'transparent',
+                        font: {
+                            size: 9
+                        },
+                        color: 'hsl(220, 10%, 60%)'
                     },
                     grid: {
                         color: 'rgba(163, 230, 53, 0.1)'
@@ -304,9 +352,10 @@ if (skillsCtx) {
                     },
                     pointLabels: {
                         font: {
-                            size: 10
+                            size: 9
                         },
-                        padding: 10
+                        padding: 15,
+                        color: 'hsl(220, 10%, 70%)'
                     }
                 }
             },
