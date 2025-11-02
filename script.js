@@ -29,15 +29,16 @@ if (nutritionCtx) {
     new Chart(nutritionCtx, {
         type: 'doughnut',
         data: {
-            labels: ['Weight Management', 'Sports Nutrition', 'Clinical Nutrition', 'Wellness Coaching', 'Meal Planning'],
+            labels: ['Weight Management', 'Sports Nutrition', 'Clinical Nutrition', 'Wellness Coaching', 'Meal Planning', 'Health Education'],
             datasets: [{
-                data: [30, 20, 20, 15, 15],
+                data: [25, 20, 20, 15, 12, 8],
                 backgroundColor: [
                     chartColors.coral,
                     chartColors.teal,
                     chartColors.purple,
                     chartColors.orange,
-                    chartColors.pink
+                    chartColors.pink,
+                    chartColors.blue
                 ],
                 borderColor: '#1a1a2e',
                 borderWidth: 3,
@@ -327,7 +328,12 @@ if (skillsCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 20
+                padding: {
+                    top: 30,
+                    bottom: 40,
+                    left: 30,
+                    right: 30
+                }
             },
             plugins: {
                 legend: {
