@@ -14,7 +14,7 @@ const chartColors = {
 };
 
 // Global Chart.js defaults
-Chart.defaults.color = '#b3b3b3';
+Chart.defaults.color = '#ffffff';
 Chart.defaults.borderColor = 'rgba(163, 230, 53, 0.1)';
 Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif";
 
@@ -46,8 +46,8 @@ if (nutritionCtx) {
             maintainAspectRatio: false,
             layout: {
                 padding: {
-                    top: 20,
-                    bottom: 20,
+                    top: 10,
+                    bottom: 10,
                     left: 10,
                     right: 10
                 }
@@ -55,32 +55,17 @@ if (nutritionCtx) {
             plugins: {
                 legend: {
                     position: 'bottom',
+                    align: 'center',
                     labels: {
-                        padding: 8,
+                        padding: 10,
                         font: {
-                            size: 10
+                            size: 11
                         },
-                        boxWidth: 10,
-                        usePointStyle: true,
-                        generateLabels: function(chart) {
-                            const data = chart.data;
-                            if (data.labels.length && data.datasets.length) {
-                                return data.labels.map((label, i) => {
-                                    const dataset = data.datasets[0];
-                                    return {
-                                        text: label,
-                                        fillStyle: dataset.backgroundColor[i],
-                                        strokeStyle: dataset.borderColor[i],
-                                        hidden: false,
-                                        index: i
-                                    };
-                                });
-                            }
-                            return [];
-                        }
-                    },
-                    maxWidth: 400,
-                    fullSize: false
+                        color: '#ffffff',
+                        boxWidth: 12,
+                        boxHeight: 12,
+                        usePointStyle: true
+                    }
                 },
                 tooltip: {
                     backgroundColor: 'rgba(44, 62, 80, 0.95)',
@@ -224,8 +209,8 @@ if (servicesCtx) {
             maintainAspectRatio: false,
             layout: {
                 padding: {
-                    top: 20,
-                    bottom: 20,
+                    top: 10,
+                    bottom: 10,
                     left: 10,
                     right: 10
                 }
@@ -233,15 +218,17 @@ if (servicesCtx) {
             plugins: {
                 legend: {
                     position: 'bottom',
+                    align: 'center',
                     labels: {
-                        padding: 6,
+                        padding: 10,
                         font: {
-                            size: 9
+                            size: 10
                         },
-                        boxWidth: 10,
+                        color: '#ffffff',
+                        boxWidth: 12,
+                        boxHeight: 12,
                         usePointStyle: true
-                    },
-                    maxWidth: 400
+                    }
                 },
                 tooltip: {
                     backgroundColor: 'rgba(44, 62, 80, 0.95)',
@@ -308,10 +295,10 @@ if (skillsCtx) {
             maintainAspectRatio: false,
             layout: {
                 padding: {
-                    top: 30,
+                    top: 25,
                     bottom: 10,
-                    left: 30,
-                    right: 30
+                    left: 25,
+                    right: 25
                 }
             },
             plugins: {
@@ -340,9 +327,9 @@ if (skillsCtx) {
                         },
                         backdropColor: 'transparent',
                         font: {
-                            size: 9
+                            size: 10
                         },
-                        color: 'hsl(220, 10%, 60%)'
+                        color: '#ffffff'
                     },
                     grid: {
                         color: 'rgba(163, 230, 53, 0.1)'
@@ -352,10 +339,10 @@ if (skillsCtx) {
                     },
                     pointLabels: {
                         font: {
-                            size: 9
+                            size: 10
                         },
-                        padding: 15,
-                        color: 'hsl(220, 10%, 70%)'
+                        padding: 12,
+                        color: '#ffffff'
                     }
                 }
             },
