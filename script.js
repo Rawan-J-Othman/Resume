@@ -273,12 +273,12 @@ if (servicesCtx) {
 }
 
 // ========================================
-// Chart 4: Skills Proficiency - Radar Chart
+// Chart 4: Skills Proficiency - Horizontal Bar Chart
 // ========================================
 const skillsCtx = document.getElementById('skillsChart');
 if (skillsCtx) {
     new Chart(skillsCtx, {
-        type: 'radar',
+        type: 'bar',
         data: {
             labels: [
                 'Nutritional Analysis',
@@ -292,23 +292,36 @@ if (skillsCtx) {
             datasets: [{
                 label: 'Proficiency Level',
                 data: [95, 90, 95, 85, 90, 88, 92],
-                backgroundColor: 'rgba(78, 205, 196, 0.3)',
-                borderColor: chartColors.teal,
-                borderWidth: 3,
-                pointBackgroundColor: chartColors.coral,
-                pointBorderColor: '#fff',
-                pointHoverBackgroundColor: '#fff',
-                pointHoverBorderColor: chartColors.coral,
-                pointRadius: 6,
-                pointHoverRadius: 8,
-                pointBorderWidth: 2
+                backgroundColor: [
+                    chartColors.coral,
+                    chartColors.teal,
+                    chartColors.purple,
+                    chartColors.orange,
+                    chartColors.mint,
+                    chartColors.pink,
+                    chartColors.indigo
+                ],
+                borderColor: [
+                    chartColors.coral,
+                    chartColors.teal,
+                    chartColors.purple,
+                    chartColors.orange,
+                    chartColors.mint,
+                    chartColors.pink,
+                    chartColors.indigo
+                ],
+                borderWidth: 2,
+                borderRadius: 8,
+                barThickness: 25,
+                hoverBorderWidth: 3
             }]
         },
         options: {
+            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: 30
+                padding: 20
             },
             plugins: {
                 legend: {
@@ -317,51 +330,73 @@ if (skillsCtx) {
                 tooltip: {
                     backgroundColor: 'rgba(26, 26, 46, 0.95)',
                     padding: 15,
+                    titleFont: {
+                        size: 14,
+                        weight: 'bold'
+                    },
+                    bodyFont: {
+                        size: 13
+                    },
                     borderColor: 'rgba(255, 255, 255, 0.2)',
                     borderWidth: 1,
                     callbacks: {
                         label: function(context) {
-                            return context.label + ': ' + context.parsed.r + '%';
+                            return 'Proficiency: ' + context.parsed.x + '%';
                         }
                     }
                 }
             },
             scales: {
-                r: {
+                x: {
                     beginAtZero: true,
                     max: 100,
-                    min: 0,
                     ticks: {
-                        stepSize: 20,
-                        display: true,
                         callback: function(value) {
                             return value + '%';
                         },
-                        backdropColor: 'transparent',
+                        color: '#ffffff',
                         font: {
                             size: 11
-                        },
-                        color: '#ffffff'
+                        }
                     },
                     grid: {
-                        color: 'rgba(255, 255, 255, 0.15)'
-                    },
-                    angleLines: {
-                        color: 'rgba(255, 255, 255, 0.15)'
-                    },
-                    pointLabels: {
-                        font: {
-                            size: 11,
-                            weight: '500'
-                        },
+                        color: 'rgba(255, 255, 255, 0.1)',
+                        drawBorder: false
+                    }
+                },
+                y: {
+                    ticks: {
                         color: '#ffffff',
-                        padding: 10
+                        font: {
+                            size: 12,
+                            weight: '500'
+                        }
+                    },
+                    grid: {
+                        display: false
                     }
                 }
             },
             animation: {
                 duration: 2000,
-                easing: 'easeInOutQuart'
+                easing: 'easeInOutQuart',
+                onComplete: function() {
+                    const chart = this;
+                    const ctx = chart.ctx;
+
+                    ctx.font = '600 12px Inter';
+                    ctx.fillStyle = '#ffffff';
+                    ctx.textAlign = 'left';
+                    ctx.textBaseline = 'middle';
+
+                    chart.data.datasets.forEach((dataset, i) => {
+                        const meta = chart.getDatasetMeta(i);
+                        meta.data.forEach((bar, index) => {
+                            const data = dataset.data[index];
+                            ctx.fillText(data + '%', bar.x + 10, bar.y);
+                        });
+                    });
+                }
             }
         }
     });
