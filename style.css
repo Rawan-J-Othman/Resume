@@ -504,13 +504,13 @@ body {
    ======================================== */
 .certifications-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: var(--spacing-md);
+    grid-template-columns: repeat(6, 1fr);
+    gap: var(--spacing-sm);
 }
 
 .cert-card {
     background: var(--bg-card);
-    padding: var(--spacing-md);
+    padding: 0.75rem;
     border-radius: var(--radius-sm);
     text-align: center;
     border: 1px solid rgba(163, 230, 53, 0.1);
@@ -525,7 +525,7 @@ body {
     top: 0;
     left: 0;
     right: 0;
-    height: 3px;
+    height: 2px;
     background: var(--gradient-primary);
     transform: scaleX(0);
     transition: var(--transition-base);
@@ -538,31 +538,33 @@ body {
 .cert-card:hover {
     border-color: var(--primary-color);
     box-shadow: var(--shadow-primary);
-    transform: translateY(-4px);
+    transform: translateY(-3px);
 }
 
 .cert-badge {
-    font-size: 2rem;
-    margin-bottom: var(--spacing-sm);
+    font-size: 1.5rem;
+    margin-bottom: 0.25rem;
 }
 
 .cert-card h3 {
-    font-size: 0.95rem;
+    font-size: 0.75rem;
     color: var(--primary-light);
-    margin-bottom: var(--spacing-xs);
-    line-height: 1.3;
+    margin-bottom: 0.25rem;
+    line-height: 1.2;
+    font-weight: 600;
 }
 
 .cert-card p {
     color: var(--text-secondary);
-    font-size: 0.8rem;
-    margin-bottom: var(--spacing-xs);
+    font-size: 0.65rem;
+    margin-bottom: 0.15rem;
+    line-height: 1.2;
 }
 
 .cert-date {
     color: var(--accent-color);
     font-weight: 600;
-    font-size: 0.75rem;
+    font-size: 0.65rem;
 }
 
 /* ========================================
@@ -825,17 +827,42 @@ body {
 /* ========================================
    Responsive Design
    ======================================== */
+
+/* Tablet and smaller desktops */
+@media (max-width: 1024px) {
+    .container {
+        padding: 0 var(--spacing-md);
+    }
+
+    .stats-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .certifications-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .contact-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .charts-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile landscape and tablets */
 @media (max-width: 768px) {
     .name {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 
     .title {
-        font-size: 1.2rem;
+        font-size: 1.1rem;
     }
 
     .section-title {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
     .profile-section {
@@ -844,71 +871,149 @@ body {
     }
 
     .profile-image-wrapper {
-        width: 150px;
-        height: 150px;
+        width: 120px;
+        height: 120px;
     }
 
     .contact-details {
         flex-direction: column;
         align-items: center;
+        font-size: 0.85rem;
     }
 
     .stats-grid {
-        grid-template-columns: repeat(3, 1fr);
-    }
-
-    .certifications-grid {
-        grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    }
-
-    .contact-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
     }
 
     .stat-number {
-        font-size: 2rem;
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
+    }
+
+    .certifications-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: var(--spacing-xs);
+    }
+
+    .cert-card {
+        padding: 0.5rem;
+    }
+
+    .cert-badge {
+        font-size: 1.2rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .cert-card h3 {
+        font-size: 0.7rem;
+    }
+
+    .cert-card p,
+    .cert-date {
+        font-size: 0.6rem;
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-sm);
     }
 
     .timeline {
-        padding-left: var(--spacing-lg);
+        padding-left: var(--spacing-md);
     }
 
     .timeline-item::before {
-        left: -1.75rem;
+        left: -1.5rem;
     }
 
     .charts-grid {
         grid-template-columns: 1fr;
+        gap: var(--spacing-md);
     }
 
-    .container {
-        padding: 0 var(--spacing-md);
+    .chart-card,
+    .chart-card-full {
+        min-height: 300px;
+    }
+
+    .chart-card canvas,
+    .chart-card-full canvas {
+        height: 250px !important;
+        max-height: 250px;
     }
 
     .section {
-        padding: var(--spacing-xl) 0;
+        padding: var(--spacing-lg) 0;
     }
 
     .cta-section h2 {
-        font-size: 1.8rem;
+        font-size: 1.6rem;
     }
 
     .cta-section p {
-        font-size: 1rem;
+        font-size: 0.95rem;
+    }
+
+    .btn-primary,
+    .btn-secondary {
+        padding: 0.6rem 1.5rem;
+        font-size: 0.9rem;
     }
 }
 
+/* Mobile portrait */
 @media (max-width: 480px) {
     .name {
-        font-size: 1.6rem;
+        font-size: 1.5rem;
     }
 
-    .stat-number {
-        font-size: 1.6rem;
+    .title {
+        font-size: 1rem;
+    }
+
+    .section-title {
+        font-size: 1.3rem;
+    }
+
+    .profile-image-wrapper {
+        width: 100px;
+        height: 100px;
+    }
+
+    .contact-details {
+        font-size: 0.8rem;
+        gap: var(--spacing-xs);
     }
 
     .stats-grid {
         grid-template-columns: repeat(2, 1fr);
+        gap: 0.5rem;
+    }
+
+    .stat-card {
+        padding: 0.5rem;
+    }
+
+    .stat-number {
+        font-size: 1.3rem;
+        margin-bottom: 0.15rem;
+    }
+
+    .stat-label {
+        font-size: 0.65rem;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-xs);
+    }
+
+    .cert-card {
+        padding: 0.5rem;
     }
 
     .contact-grid {
@@ -918,6 +1023,49 @@ body {
     .education-grid,
     .volunteer-grid {
         grid-template-columns: 1fr;
+    }
+
+    .chart-card,
+    .chart-card-full {
+        min-height: 280px;
+        padding: var(--spacing-md);
+    }
+
+    .chart-card canvas,
+    .chart-card-full canvas {
+        height: 220px !important;
+        max-height: 220px;
+    }
+
+    .cta-section h2 {
+        font-size: 1.4rem;
+    }
+
+    .cta-section p {
+        font-size: 0.9rem;
+    }
+
+    .container {
+        padding: 0 1rem;
+    }
+
+    .section {
+        padding: var(--spacing-md) 0;
+    }
+}
+
+/* Very small phones */
+@media (max-width: 360px) {
+    .stats-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .stat-number {
+        font-size: 1.5rem;
+    }
+
+    .stat-label {
+        font-size: 0.7rem;
     }
 }
 
