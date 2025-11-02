@@ -2,20 +2,20 @@
 // Chart.js Configurations
 // ========================================
 
-// Color palette matching the nutritionist theme
+// Color palette matching the dark navy + lime green theme
 const chartColors = {
-    primary: '#6BBE92',
-    primaryLight: '#8FD1A9',
-    primaryDark: '#4A9F73',
-    accent: '#F4A460',
-    accentLight: '#FFB77C',
-    background: 'rgba(107, 190, 146, 0.1)',
-    border: 'rgba(107, 190, 146, 0.3)'
+    primary: 'hsl(100, 70%, 55%)',
+    primaryLight: 'hsl(100, 70%, 65%)',
+    primaryDark: 'hsl(100, 70%, 45%)',
+    accent: 'hsl(100, 70%, 55%)',
+    accentLight: 'hsl(100, 70%, 65%)',
+    background: 'rgba(163, 230, 53, 0.1)',
+    border: 'rgba(163, 230, 53, 0.3)'
 };
 
 // Global Chart.js defaults
 Chart.defaults.color = '#b3b3b3';
-Chart.defaults.borderColor = 'rgba(107, 190, 146, 0.1)';
+Chart.defaults.borderColor = 'rgba(163, 230, 53, 0.1)';
 Chart.defaults.font.family = "'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif";
 
 // ========================================
@@ -148,7 +148,7 @@ if (clientGoalsCtx) {
                         }
                     },
                     grid: {
-                        color: 'rgba(107, 190, 146, 0.05)'
+                        color: 'rgba(163, 230, 53, 0.05)'
                     }
                 },
                 x: {
@@ -225,7 +225,7 @@ if (servicesCtx) {
                         display: false
                     },
                     grid: {
-                        color: 'rgba(107, 190, 146, 0.1)'
+                        color: 'rgba(163, 230, 53, 0.1)'
                     }
                 }
             },
@@ -297,10 +297,10 @@ if (skillsCtx) {
                         backdropColor: 'transparent'
                     },
                     grid: {
-                        color: 'rgba(107, 190, 146, 0.1)'
+                        color: 'rgba(163, 230, 53, 0.1)'
                     },
                     angleLines: {
-                        color: 'rgba(107, 190, 146, 0.1)'
+                        color: 'rgba(163, 230, 53, 0.1)'
                     },
                     pointLabels: {
                         font: {
@@ -423,8 +423,8 @@ window.addEventListener('load', () => {
 // Console Message
 // ========================================
 console.log('%c👋 Welcome to Rawan J. Othman\'s Professional Resume!',
-    'color: #6BBE92; font-size: 16px; font-weight: bold;');
+    'color: hsl(100, 70%, 55%); font-size: 16px; font-weight: bold;');
 console.log('%cCertified Nutritionist | Personal Trainer | Wellness Coach',
-    'color: #F4A460; font-size: 12px;');
+    'color: hsl(100, 70%, 55%); font-size: 12px;');
 console.log('%cInterested in collaborating? Email: othmanrawan21@gmail.com',
     'color: #b3b3b3; font-size: 11px;');
