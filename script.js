@@ -31,7 +31,7 @@ if (nutritionCtx) {
         data: {
             labels: ['Weight Management', 'Sports Nutrition', 'Clinical Nutrition', 'Wellness Coaching', 'Meal Planning', 'Health Education'],
             datasets: [{
-                data: [25, 20, 20, 15, 12, 8],
+                data: [30, 20, 20, 15, 10, 5],
                 backgroundColor: [
                     chartColors.coral,
                     chartColors.teal,
@@ -328,12 +328,7 @@ if (skillsCtx) {
             responsive: true,
             maintainAspectRatio: false,
             layout: {
-                padding: {
-                    top: 30,
-                    bottom: 40,
-                    left: 30,
-                    right: 30
-                }
+                padding: 20
             },
             plugins: {
                 legend: {
