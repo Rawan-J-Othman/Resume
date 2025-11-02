@@ -941,32 +941,35 @@ body {
         gap: var(--spacing-sm);
     }
 
-    .chart-card,
-    .chart-card-full {
-        min-height: 200px;
-        padding: var(--spacing-sm);
+    .chart-card {
+        min-height: 240px;
+        padding: var(--spacing-md);
     }
 
-    .chart-card h3,
-    .chart-card-full h3 {
+    .chart-card h3 {
         font-size: 0.95rem;
         margin-bottom: var(--spacing-xs);
     }
 
     .chart-card canvas {
-        height: 180px !important;
-        max-height: 180px;
+        height: 200px !important;
+        max-height: 200px;
     }
 
-    /* Fix Skills Proficiency labels on mobile - make it taller */
+    /* Fix Skills Proficiency labels on mobile - make it much taller */
     .chart-card-full {
-        min-height: 280px;
+        min-height: 320px;
         padding: var(--spacing-md);
     }
 
+    .chart-card-full h3 {
+        font-size: 0.95rem;
+        margin-bottom: var(--spacing-xs);
+    }
+
     .chart-card-full canvas {
-        height: 240px !important;
-        max-height: 240px;
+        height: 260px !important;
+        max-height: 260px;
     }
 
     .section {
@@ -1060,20 +1063,25 @@ body {
         margin-bottom: 0.5rem;
     }
 
+    .chart-card {
+        min-height: 220px;
+        padding: var(--spacing-sm);
+    }
+
     .chart-card canvas {
-        height: 150px !important;
-        max-height: 150px;
+        height: 180px !important;
+        max-height: 180px;
     }
 
     /* Increase height for Skills chart to show all labels */
     .chart-card-full {
-        min-height: 260px;
+        min-height: 300px;
         padding: var(--spacing-sm);
     }
 
     .chart-card-full canvas {
-        height: 220px !important;
-        max-height: 220px;
+        height: 250px !important;
+        max-height: 250px;
     }
 
     .cta-section h2 {
