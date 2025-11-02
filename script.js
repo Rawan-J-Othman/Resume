@@ -273,7 +273,7 @@ if (servicesCtx) {
 }
 
 // ========================================
-// Chart 4: Skills Proficiency - Horizontal Bar Chart
+// Chart 4: Skills Proficiency - Vertical Bar Chart
 // ========================================
 const skillsCtx = document.getElementById('skillsChart');
 if (skillsCtx) {
@@ -290,7 +290,7 @@ if (skillsCtx) {
                 'Cultural Competency'
             ],
             datasets: [{
-                label: 'Proficiency Level',
+                label: 'Proficiency Level (%)',
                 data: [95, 90, 95, 85, 90, 88, 92],
                 backgroundColor: [
                     chartColors.coral,
@@ -311,13 +311,19 @@ if (skillsCtx) {
                     chartColors.indigo
                 ],
                 borderWidth: 2,
-                borderRadius: 8,
-                barThickness: 25,
-                hoverBorderWidth: 3
+                borderRadius: 10,
+                hoverBackgroundColor: [
+                    chartColors.pink,
+                    chartColors.coral,
+                    chartColors.indigo,
+                    chartColors.yellow,
+                    chartColors.teal,
+                    chartColors.orange,
+                    chartColors.purple
+                ]
             }]
         },
         options: {
-            indexAxis: 'y',
             responsive: true,
             maintainAspectRatio: false,
             layout: {
@@ -341,13 +347,13 @@ if (skillsCtx) {
                     borderWidth: 1,
                     callbacks: {
                         label: function(context) {
-                            return context.label + ': ' + context.parsed.x + '%';
+                            return 'Proficiency: ' + context.parsed.y + '%';
                         }
                     }
                 }
             },
             scales: {
-                x: {
+                y: {
                     beginAtZero: true,
                     max: 100,
                     ticks: {
@@ -364,12 +370,11 @@ if (skillsCtx) {
                         drawBorder: false
                     }
                 },
-                y: {
+                x: {
                     ticks: {
                         color: '#ffffff',
                         font: {
-                            size: 12,
-                            weight: '500'
+                            size: 11
                         }
                     },
                     grid: {
@@ -378,8 +383,8 @@ if (skillsCtx) {
                 }
             },
             animation: {
-                duration: 1500,
-                easing: 'easeInOutQuart'
+                duration: 2000,
+                easing: 'easeInOutBounce'
             }
         }
     });
