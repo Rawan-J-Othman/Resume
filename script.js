@@ -341,7 +341,7 @@ if (skillsCtx) {
                     borderWidth: 1,
                     callbacks: {
                         label: function(context) {
-                            return 'Proficiency: ' + context.parsed.x + '%';
+                            return context.label + ': ' + context.parsed.x + '%';
                         }
                     }
                 }
@@ -378,25 +378,8 @@ if (skillsCtx) {
                 }
             },
             animation: {
-                duration: 2000,
-                easing: 'easeInOutQuart',
-                onComplete: function() {
-                    const chart = this;
-                    const ctx = chart.ctx;
-
-                    ctx.font = '600 12px Inter';
-                    ctx.fillStyle = '#ffffff';
-                    ctx.textAlign = 'left';
-                    ctx.textBaseline = 'middle';
-
-                    chart.data.datasets.forEach((dataset, i) => {
-                        const meta = chart.getDatasetMeta(i);
-                        meta.data.forEach((bar, index) => {
-                            const data = dataset.data[index];
-                            ctx.fillText(data + '%', bar.x + 10, bar.y);
-                        });
-                    });
-                }
+                duration: 1500,
+                easing: 'easeInOutQuart'
             }
         }
     });
